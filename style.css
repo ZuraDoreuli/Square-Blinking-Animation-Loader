@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #eee;
+  color: #c0c0c0;
+  font-family: "Courier New", Courier, monospace;
+}
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+.loader {
+  display: flex;
+  gap: 30px;
+}
+.loader div {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #c0c0c0;
+  box-shadow: #2525251f 0px 2px 4px 0px, #0e0e0e52 0px 2px 16px 0px;
+}
+.loader div:before,
+.loader div:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+.loader div:before {
+  background: #ffffff;
+  animation: blink-1 3s linear infinite;
+}
+.loader div:after {
+  background: #c0c0c0;
+  animation: blink-2 3s linear infinite;
+}
+.loader div:nth-child(2):before,
+.loader div:nth-child(2):after {
+  animation-delay: 0.3s;
+}
+.loader div:nth-child(3):before,
+.loader div:nth-child(3):after {
+  animation-delay: 0.6s;
+}
+.loader div:nth-child(4):before,
+.loader div:nth-child(4):after {
+  animation-delay: 0.9s;
+}
+.loader div:nth-child(5):before,
+.loader div:nth-child(5):after {
+  animation-delay: 1.2s;
+}
+.loader div:nth-child(6):before,
+.loader div:nth-child(6):after {
+  animation-delay: 1.5s;
+}
+@keyframes blink-1 {
+  0% {
+    transform: scale(0);
+    z-index: 2;
+  }
+  50%,
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes blink-2 {
+  0%,
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
